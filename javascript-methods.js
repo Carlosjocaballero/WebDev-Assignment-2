@@ -31,8 +31,6 @@ Array.prototype.myFilter = function(callbackFn) {
 
 };
 
-console.log("myFilter: ", [12,5,8,130,44].myFilter(x => x >=10));
-console.log("filter: ", [12,5,8,130,44].filter(x => x >= 10));
 // SOME //
 Array.prototype.mySome = function(callbackFn) {
   // Place your code here.
