@@ -15,7 +15,20 @@ Array.prototype.myMap = function(callbackFn) {
 
 // FILTER //
 Array.prototype.myFilter = function(callbackFn) {
-  // Place your code here.
+	// The filtered array that will be returned
+	let filteredArray = [];
+	for(let i = 0; i < this.length; i++){
+		// if item in array is undefined, skip
+		if(this[i] === undefined) continue;
+		
+		// callbackfn will return boolean
+		if(callbackFn(this[i], i, this)){
+			// if true, push item to filtered array
+			filteredArray.push(this[i]);
+		}
+	}
+	return filteredArray;
+
 };
 
 // SOME //
