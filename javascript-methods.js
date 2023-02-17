@@ -15,9 +15,24 @@ Array.prototype.myMap = function(callbackFn) {
 
 // FILTER //
 Array.prototype.myFilter = function(callbackFn) {
-  // Place your code here.
+	// The filtered array that will be returned
+	let filteredArray = [];
+	for(let i = 0; i < this.length; i++){
+		// if item in array is undefined, skip
+		if(this[i] === undefined) continue;
+		
+		// callbackfn will return boolean
+		if(callbackFn(this[i], i, this)){
+			// if true, push item to filtered array
+			filteredArray.push(this[i]);
+		}
+	}
+	return filteredArray;
+
 };
 
+console.log("myFilter: ", [12,5,8,130,44].myFilter(x => x >=10));
+console.log("filter: ", [12,5,8,130,44].filter(x => x >= 10));
 // SOME //
 Array.prototype.mySome = function(callbackFn) {
   // Place your code here.
