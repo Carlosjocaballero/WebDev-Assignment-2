@@ -15,7 +15,7 @@ Array.prototype.myMap = function(callbackFn) {
 	for (let i = 0; i < this.length; i++) {
 		let value = this[i];
 		// perform the function on each element 
-		if (value != undefined) mappedArray.push(callbackFn(value)); 
+		if (value !== undefined) mappedArray.push(callbackFn(value)); 
 	}
 	return mappedArray;
 };
