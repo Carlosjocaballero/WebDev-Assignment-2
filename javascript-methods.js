@@ -50,7 +50,16 @@ Array.prototype.myEvery = function(callbackFn) {
 
 // REDUCE //
 Array.prototype.myReduce = function(callbackFn) {
-  // Place your code here.
+	// if the array length is zero, return null
+	if (this.length === 0) return null;
+	// the accumulated value
+	let accValue = this[0];
+	for (let i = 1; i < this.length; i++) {
+		let nextValue = this[i];
+		// perform the function on each element 
+		if (nextValue !== undefined) accValue = callbackFn(accValue, nextValue); 
+	}
+	return accValue;
 };
 
 // INCLUDES //
