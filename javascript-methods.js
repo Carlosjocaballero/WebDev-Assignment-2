@@ -36,7 +36,7 @@ Array.prototype.mySome = function(callbackFn) {
 	for (let i = 0; i < this.length; i++) {
 		let value = this[i];
 		// perform the function on each element 
-		if (value != undefined) {
+		if (value !== undefined) {
 			// if one value satisifes the function, return true
 			if (callbackFn(value)) return true; 
 		}
