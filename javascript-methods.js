@@ -33,7 +33,15 @@ Array.prototype.myFilter = function(callbackFn) {
 
 // SOME //
 Array.prototype.mySome = function(callbackFn) {
-  // Place your code here.
+	for (let i = 0; i < this.length; i++) {
+		let value = this[i];
+		// perform the function on each element 
+		if (value !== undefined) {
+			// if one value satisifes the function, return true
+			if (callbackFn(value)) return true; 
+		}
+	}
+	return false;
 };
 
 // EVERY //
