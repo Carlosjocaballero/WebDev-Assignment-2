@@ -15,7 +15,7 @@ Array.prototype.myMap = function(callbackFn) {
 	for (let i = 0; i < this.length; i++) {
 		let value = this[i];
 		// perform the function on each element 
-		if (value !== undefined) mappedArray.push(callbackFn(value)); 
+		if (value !== undefined) mappedArray.push(callbackFn(value, i, this)); 
 	}
 	return mappedArray;
 };
@@ -45,7 +45,7 @@ Array.prototype.mySome = function(callbackFn) {
 		// perform the function on each element 
 		if (value !== undefined) {
 			// if one value satisifes the function, return true
-			if (callbackFn(value)) return true; 
+			if (callbackFn(value, i, this)) return true; 
 		}
 	}
 	return false;
@@ -72,7 +72,7 @@ Array.prototype.myReduce = function(callbackFn) {
 	for (let i = 1; i < this.length; i++) {
 		let nextValue = this[i];
 		// perform the function on each element 
-		if (nextValue !== undefined) accValue = callbackFn(accValue, nextValue); 
+		if (nextValue !== undefined) accValue = callbackFn(accValue, nextValue, i, this); 
 	}
 	return accValue;
 };
