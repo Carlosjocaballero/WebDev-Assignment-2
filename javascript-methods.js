@@ -10,7 +10,14 @@ In this Assignment, we use the prototype constructor to add new methods to the A
 
 // MAP //
 Array.prototype.myMap = function(callbackFn) {
-  // Place your code here.
+	// the mapped array
+	let mappedArray = [];
+	for (let i = 0; i < this.length; i++) {
+		let value = this[i];
+		// perform the function on each element 
+		if (value !== undefined) mappedArray.push(callbackFn(value)); 
+	}
+	return mappedArray;
 };
 
 // FILTER //
