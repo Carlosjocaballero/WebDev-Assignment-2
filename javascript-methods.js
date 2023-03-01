@@ -74,17 +74,17 @@ Array.prototype.myLastIndexOf = function(searchElement) {
 
 // KEYS //
 Object.myKeys = function(object) {
-  // Place your code here.
+	let objectKeys = [];
+	// iterate over the object and get all keys
+	for(key in object) objectKeys.push(key);
+	return objectKeys;
 };
 
 // VALUES //
 Object.myValues = function(object) {
-  objectKeys = [];
-
-  for(i in object){
-	objectKeys.push(object[i]);
-  }
-
-  return objectKeys;
+	let objectValues = [];
+	// iterate over the object and get all values
+	for(i in object) objectValues.push(object[i]);
+	return objectValues;
 };
 
